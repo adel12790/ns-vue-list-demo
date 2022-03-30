@@ -5,12 +5,9 @@
     </ActionBar>
 
     <GridLayout>
-      <Label class="info">
-        <FormattedString>
-          <Span class="fas" text.decode="&#xf135; "/>
-          <Span :text="message"/>
-        </FormattedString>
-      </Label>
+      <list class="grocery-list"
+        :dataList="groceryList"
+        />
     </GridLayout>
   </Page>
 </template>
@@ -18,12 +15,38 @@
 <script lang="ts">
   import Vue from "nativescript-vue";
 
+  import List from './list.vue';
+
   export default Vue.extend({
-    computed: {
-      message() {
-        return "Blank {N}-Vue app";
-      }
-    }
+    components: {
+      List,
+    },
+    data() {
+      return {
+        groceryList: [
+          {
+            type: 'fruit',
+            name: 'bannana',
+          },
+          {
+            type: 'fruit',
+            name: 'apple',
+          },
+          {
+            type: 'veggies',
+            name: 'Cucumber',
+          },
+          {
+            type: 'fruit',
+            name: 'strawberries',
+          },
+          {
+            type: 'veggies',
+            name: 'Spinash',
+          },
+        ]
+      };
+    },
   });
 </script>
 
