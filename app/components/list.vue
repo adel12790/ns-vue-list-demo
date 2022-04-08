@@ -10,6 +10,9 @@
             <v-template name="veggies">
                 <Label :text="item.name" />
             </v-template>
+            <v-template name="default">
+                <Label text="not on the list" />
+            </v-template>
         </ListView>
     </GridLayout>
 </template>
